@@ -14,8 +14,13 @@ body {
 img {
   display: block;
 }
-h1, h2, h3, h4, p {margin:0; }
-
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
 
 .container {
   margin: 0 auto;
@@ -24,8 +29,8 @@ h1, h2, h3, h4, p {margin:0; }
   width: 1158px;
   margin: 0 auto;
 }
-.container-header{ 
-display: flex;
+.container-header {
+  display: flex;
 }
 .container-header .container-header p {
   font-family: "Roboto";
@@ -57,7 +62,6 @@ display: flex;
   letter-spacing: 0.03em; /* для визначення відступів між літерами */
   text-transform: uppercase;
   color: #4d5ae5;
-
 }
 .link {
   text-decoration: none;
@@ -77,7 +81,7 @@ display: flex;
   gap: 40px; /* для визначення відступів між пунктами меню */
   display: flex;
   justify-content: flex-start;
-/*   padding-right: 332px; */
+  /*   padding-right: 332px; */
   padding-left: 0;
 }
 .meny-link {
@@ -130,13 +134,19 @@ display: flex;
   color: #404bbf;
 }
 .hero {
-  background-color: #2e2f42;
   padding: 188px 0;
+  background-color: #2e2f42;
+  background-image: linear-gradient(
+      to right,
+      rgba(46, 47, 66, 0.7),
+      rgba(46, 47, 66, 0.7)
+    ),
+    url(../images/bg-people-office.jpg);
+  /*   Щоб було накладення темного градієнту, його потрібно вказати перед картинкою */
+  background-repeat: no-repeat;
   height: 600px;
   display: flex;
 }
-
-
 
 .hero-title {
   margin: 0 auto;
@@ -179,26 +189,37 @@ display: flex;
 .hero-btn:focus {
   background-color: #404bbf;
 }
-.advantages{
+.advantages {
   padding: 120px 0;
   /* background-color: gold; */
 }
-.advantages-list{
+.advantages-list {
   display: flex;
   gap: 24px;
-  padding:0 ;
-
+  padding: 0;
 }
 
-.advantages-item{
+.advantages-item-bg {
+  display: block; /* Без цього не буде працювати ширина і висота  */
+  height: 112px; /* Щоб він був розтягнутий на 100% ширини батьківського, прибрати фіксовану ширину. Завдяки display: block, він займе всю ширину.  */
+  background-color: #f4f4fd;
+  padding: 24px 0 24px 0;
+  margin-bottom: 8px;
+}
+.icon-advantages {
+  margin: 0 auto;
+  display: block;
+}
+
+.advantages-item {
   width: calc((100% - 72px) / 4);
-    /* width: calc((100% - 72px) / 4); */
+  /* width: calc((100% - 72px) / 4); */
 
   /* width: calc((100% - 3 * 24px) / 4); */
 
   /* За макетом у нас є 4 пункти списку, між якими 3 проміжки по 27рх
   Зі 100% екрану віднімаємо 3 проміжки між пунктами по 24рх, і цей результат ділимо на кількість пунктів списку 4 */
-/*   width: calc((100% - 72px) / 4);
+  /*   width: calc((100% - 72px) / 4);
   для визначення ширини пункту списку (від загальної ширини екрану віднімаємо суму відступів між пунктами і ділимо це на кількість пунктів списку) 
   (можна також використовувати width calc((100% - 3 * 24px) / 4)
    або flex-basis: calc((100% - 3 * 24px) / 4) або flex-basis: calc((100% - 72px) / 4)) */
@@ -223,14 +244,14 @@ display: flex;
   letter-spacing: 0.02em;
 }
 
-.we-doing{
- /*  background-color: goldenrod; */
- /*  display: flex; */
+.we-doing {
+  /*  background-color: goldenrod; */
+  /*  display: flex; */
   padding-bottom: 120px;
 }
 .doing-title {
   margin-bottom: 72px;
- /*  padding-bottom: 72px; */
+  /*  padding-bottom: 72px; */
   font-family: "Roboto";
   font-style: normal;
   font-weight: 700;
@@ -242,13 +263,12 @@ display: flex;
   line-height: 1.11;
   text-transform: capitalize;
 }
-.doing-list{
+.doing-list {
   display: flex;
   gap: 24px;
   padding: 0;
-
 }
-.doing-item{
+.doing-item {
   width: calc((100% - 2 * 24px) / 3);
 }
 
@@ -283,10 +303,10 @@ display: flex;
   background-color: #f4f4fd;
   /* background-color: darkgoldenrod; */
 }
-.team-title{
+.team-title {
   margin-bottom: 72px;
 }
-.our-team-list{
+.our-team-list {
   display: flex;
   gap: 24px;
   padding: 0;
@@ -294,7 +314,7 @@ display: flex;
 .our-team-card {
   width: calc((100% - 3 * 24px) / 4);
   background-color: #ffffff;
-/*   width: 264px;
+  /*   width: 264px;
   height: 380px;  якщо вказати висоту, то не буде працювати    width: calc((100% - 3 * 24px) / 4); */
   border-radius: 0px 0px 4px 4px; /* для визначення заокруглень внизу блока
    (можна використовувати border-top-left-radius: 0px; border-top-right-radius: 0px ; border-top-right-radius: 4px; border-bottom-left-radius:4px;) */
@@ -302,12 +322,13 @@ display: flex;
 /* .our-team-img{
   padding-bottom: 32px;
 } */
-.our-team-info{
+
+.our-team-info {
   text-align: center;
-  padding: 32px 16px;/*  для визначення відступів від краю контейнера
+  padding: 32px 16px; /*  для визначення відступів від краю контейнера
    (можна використовувати аналог padding: 32px 16px 32px або padding-top: 32px; та padding-bottom: 32px; padding-left: 16px; padding-right: 16px) */
 }
-.team-subtitle{
+.team-subtitle {
   text-align: center;
   margin: 0;
   margin-bottom: 8px;
@@ -324,30 +345,95 @@ display: flex;
   letter-spacing: 0.02em;
   color: #434455;
 }
-.footer {
-  background-color: #2e2f42;
-  padding: 100px 0; /* для визначення відступів всередині секції
-  (можна використовувати аналог padding: 100px 0 100px або padding-top: 100px; та padding-bottom: 100px;) */
-}
-  
 
-.logo-footer{
+.social-list {
+  display: flex;
+}
+.social-list {
+  gap: 24px;
+  display: flex;
+  padding: 0;
+  margin-top: 8px;
+}
+.social-list-icon {
+  margin: 12px;
+}
+.social-list-item {
+  display: block;
+  width: 40px;
+  height: 40px;
+  background-color: #4d5ae5;
+  border-radius: 50%;
+}
+.customers {
+  padding-top: 120px;
+}
+.customers-title {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 40px;
+  text-align: center;
+  letter-spacing: 0.02em;
+  text-transform: capitalize;
+  color: #2e2f42;
+  margin-bottom: 72px;
+}
+
+.customers-list {
+  padding-left: 0;
+  display: flex;
+  gap: 24px;
+  margin-bottom: 120px;
+}
+
+.customers-list-item {
+  display: block;
+  width: 168px;
+  height: 88px;
+  border: 1px solid #8e8f99; /* #404BBF */
+  border-radius: 4px;
+  padding-top: 23px;
+}
+.customers-icons {
+  display: block;
+  margin: 0 auto;
+}
+.footer {
+  display: flex;
+  background-color: #2e2f42;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+.logo-footer {
   color: #4d5ae5;
   display: inline-block;
   margin-bottom: 16px;
-} 
-.footer-text{font-family: 'Roboto';
-font-style: normal;
-font-weight: 400;
-font-size: 16px;
-line-height: 24px;
-letter-spacing: 0.02em;
-width: 264px;}
+}
+.footer-text {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.02em;
+  width: 264px;
+}
+.social-media-text {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+}
+.media-list {
+  gap: 16px;
+}
+/* Portfolio */
 
- /* Portfolio */
-
-
-.portfolio{
+.portfolio {
   padding: 96px 0 120px;
 }
 .portfolio-title {
@@ -362,8 +448,8 @@ width: 264px;}
 }
 
 .btn-portfolio {
-  padding: 12px 24px; 
-/*   width: 116px; Не потрібно, тому що тут є padding: 12px 24px;  */
+  padding: 12px 24px;
+  /*   width: 116px; Не потрібно, тому що тут є padding: 12px 24px;  */
   height: 48px;
   background: #f4f4fd;
   border: 1px solid #e7e9fc;
@@ -403,7 +489,7 @@ width: 264px;}
 .btn-portfolio-list {
   display: flex;
   gap: 24px;
-/*   padding-bottom: 72px;
+  /*   padding-bottom: 72px;
   margin: 0; */
   margin-bottom: 72px;
   justify-content: center;
@@ -421,16 +507,15 @@ width: 264px;}
   row-gap: 48px; /* для визначення вертикальних відступів між елементами списку якщо вони переносяться на новий рядок
    (можна використовувати margin-bottom: 48px для тега li у класі, для трьох останіх пунктів списку використовуємо margin-bottom: 0 для обнулення відступів) */
 }
-.portfolio-card-item{
-  width: calc((100% - 48px) / 3); 
+.portfolio-card-item {
+  width: calc((100% - 48px) / 3);
 }
-.portfolio-card-item-conteiner{
+.portfolio-card-item-conteiner {
   padding: 32px 16px;
   border: 1px solid #e7e9fc; /* для визначення стилю обводки по периметру контейнера */
-  border-top: none; 
-  
+  border-top: none;
 }
-.portfolio-title{
+.portfolio-title {
   margin: 0;
-  margin-bottom: 8px /* для визначення відступу між заголовком та параграфом */
+  margin-bottom: 8px; /* для визначення відступу між заголовком та параграфом */
 }
