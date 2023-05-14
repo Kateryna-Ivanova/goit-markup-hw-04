@@ -341,8 +341,10 @@ p {
 } */
 
 .our-team-info {
+  padding-top: 32px;
+  padding-bottom: 32px;
   text-align: center;
-  padding: 32px 16px; /*  для визначення відступів від краю контейнера
+  /*  padding: 32px 16px; */ /*  для визначення відступів від краю контейнера
    (можна використовувати аналог padding: 32px 16px 32px або padding-top: 32px; та padding-bottom: 32px; padding-left: 16px; padding-right: 16px) */
 }
 .team-subtitle {
@@ -364,17 +366,14 @@ p {
 }
 
 .social-list {
-  display: flex;
-}
-.social-list {
   gap: 24px;
   display: flex;
-  padding: 0;
+  justify-content: center;
+  padding: 0 16px;
   margin-top: 8px;
 }
 .social-list-link {
   display: flex;
-
   height: 100%;
   width: 100%; /* що встановлює ширину елемента на 100% ширини батьківського контейнера */
   background-color: #4d5ae5;
@@ -382,7 +381,12 @@ p {
   align-items: center;
   justify-content: center;
 }
-.social-list-icon {
+.social-list-link:hover,
+.social-list-link:focus {
+  background-color: #404bbf;
+}
+
+.social-list-link .social-list-icon {
   margin: 12px;
   fill: #f4f4fd;
 }
@@ -407,6 +411,7 @@ p {
   text-transform: capitalize;
   color: #2e2f42;
   margin-bottom: 72px;
+  line-height: 1.1; /* для визначення простору між рядками */
 }
 
 .customers-list {
@@ -419,20 +424,40 @@ p {
   display: block;
   width: 168px;
   height: 88px;
-  border: 1px solid #8e8f99; /* #404BBF */
-  border-radius: 4px;
-  padding-top: 23px;
 }
 .customers-icons {
   display: block;
   margin: 0 auto;
 }
-.footer {
+
+.customers-list-link {
+  width: 100%; /* що встановлює ширину елемента на 100% ширини батьківського контейнера */
+  height: 100%;
+  border: 1px solid #8e8f99;
+  border-radius: 4px; /*  що встановлює радіуси кутів елемента */
   display: flex;
+  align-items: center;
+  justify-content: center;
+  fill: #8e8f99;
+}
+.customers-list-link:hover,
+.customers-list-link:focus {
+  border-color: #404bbf;
+  color: #404bbf;
+  fill: currentColor; /*  для задання значення кольору svg?, що спадає з батьківського елементу (для цього потрібно прибрати властивість fill у спрайті для іконки) */
+}
+
+.footer {
   background-color: #2e2f42;
   padding-top: 100px;
   padding-bottom: 100px;
+  
 }
+
+.footer-content{
+  display: flex;
+}
+
 .logo-footer {
   color: #4d5ae5;
   display: inline-block;
@@ -447,6 +472,10 @@ p {
   letter-spacing: 0.02em;
   width: 264px;
 }
+
+.social-media{
+  margin-left: 120px;
+}
 .social-media-text {
   font-family: "Roboto";
   font-style: normal;
@@ -456,6 +485,10 @@ p {
   letter-spacing: 0.02em;
   color: #ffffff;
 }
+.social-list-footer{
+  padding: 0;
+}
+
 .media-list {
   gap: 16px;
 }
